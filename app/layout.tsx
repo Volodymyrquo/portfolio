@@ -1,30 +1,35 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "./provider";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import React from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
+import './globals.css';
+import { ThemeProvider } from './provider';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Volodymyr's Portfolio",
-  description: "Modern & Minimalist JS Portfolio",
+    title: "Volodymyr's Portfolio",
+    description: 'Modern & Minimalist JS Portfolio',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>  <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider></body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                {' '}
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                </ThemeProvider>
+            </body>
+        </html>
+    );
 }

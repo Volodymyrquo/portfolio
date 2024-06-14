@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": ["readable-tailwind"],
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "next/core-web-vitals"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "require-jsdoc": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "parser": "flow"
+            }
+        ]
+    }
 }
